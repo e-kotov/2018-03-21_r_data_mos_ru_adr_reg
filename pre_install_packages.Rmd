@@ -1,0 +1,25 @@
+
+# Установка и активация пакетов - выполните блок кода ниже
+
+```{r install_packages, results="hide", message=FALSE}
+# first install missing packages
+# thanks to Pratik Patil for the package installation code ( http://stackoverflow.com/a/29622385 )
+# Specify the list of required packages to be installed and load  
+Required_Packages <- c("data.table", "readxl", "sf", "parallel", "rlist", "rgdal")
+
+Install_And_Load <- function(Required_Packages) {
+        Remaining_Packages <- Required_Packages[!(Required_Packages %in% installed.packages()[,"Package"])]
+        
+        if(length(Remaining_Packages)) 
+        {
+                install.packages(Remaining_Packages, repos = "https://cran.rstudio.com", type = "binary")
+        }
+        for(package_name in Required_Packages)
+        {
+                library(package_name, character.only = T, quietly = F)
+        }
+}
+
+
+Install_And_Load(Required_Packages) # Call the function to install packages
+```

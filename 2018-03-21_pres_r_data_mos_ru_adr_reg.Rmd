@@ -1,0 +1,94 @@
+---
+title: 'Дата-среда: город и пространственные данные.'
+subtitle: 'Мастер-класс: Предобработка пространственных данных с портала data.mos.ru на примере Адресного Реестра'
+author: 'Егор Котов - научный сотрудник Высшей школы урбанистики НИУ ВШЭ'
+date: '2018-03-21'
+output:
+  slidy_presentation: 
+    highlight: kate
+    duration: 20
+    footer: 'Егор Котов || Высшая школа урбанистики НИУ ВШЭ || 2018'
+    self_contained: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+#-------------------------Package Installer--------------------------
+# load packages and install if missing
+# thanks to Richard Schwinn for the code, http://stackoverflow.com/a/33876492
+
+# list the packages you need
+p <- c("data.table", "readxl", "sf")
+
+# this is a package loading function
+loadpacks <- function(package.list = p){
+new.packages <- package.list[!(package.list %in% installed.packages()[,"Package"])]
+        if(length(new.packages)) {
+                install.packages(new.packages, repos = "https://cran.rstudio.com")
+        }
+lapply(eval(package.list), require, character.only = TRUE)
+}
+
+loadpacks(p) # calling function to load and/or install packages
+rm(loadpacks, p) # cleanup namespace
+
+#----------------------End of Package Installer----------------------
+```
+
+
+
+## План лекции
+
+- Скачиваем готовые данные
+
+- Скачиваем данные при помощи open-source инструментов
+
+- Обрабатываем данные вручную в Excel или LibreOffice/OpenOffice
+
+- Обрабатываем данные в R
+
+
+## Скачиваем готовые данные
+
+[https://gitlab.com/nextgis/data.mos.ru](https://gitlab.com/nextgis/data.mos.ru)
+
+Спаисибо Максиму Дубинину и NextGIS (не реклама!)!
+
+Скрипт для обработки данных написан Максимом Дубининым в рамках Дня открытых данных 2017 года.
+
+![](images/nextgis_logo.svg)
+
+## Скачиваем данные при помощи open-source инструментов
+
+- устанавливаем Node.js: https://nodejs.org/
+
+- устанавливаем https://github.com/urbica/datamos-geojson
+
+    - или просто после утановки Node.js в командной строке выполняем `npm install -g datamos-geojson`
+    
+- в командной строке выполняем `datamos-geojson` и вводим номер датасета с сайта data.mos.ru, указанный в паспорте
+
+[https://data.mos.ru/opendata/7710878000-gorodskoy-wi-fi/passport?versionNumber=1&releaseNumber=6](https://data.mos.ru/opendata/7710878000-gorodskoy-wi-fi/passport?versionNumber=1&releaseNumber=6)
+
+![](images/data_passport.png)
+
+
+Спасибо Андрею Кармацкому и Urbica (не реклама)!
+
+![](images/urbica_logo.svg)
+
+
+## Обрабатываем данные вручную в Excel или LibreOffice/OpenOffice
+
+![](images/xlsx_coords.png)
+
+## Обрабатываем данные в R
+
+Читаем документацию портала открытых данных: https://apidata.mos.ru/Docs#datasetFeatures
+
+![](images/Rlogo.svg)
+
+
+
