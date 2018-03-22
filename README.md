@@ -4,6 +4,12 @@
 
 
 
+Видио запись мастер-класса по ссылке:
+
+https://www.youtube.com/watch?v=Vu6t04-yZSY
+
+
+
 Описание процесса загрузки данных адресного реестра, их исправления – доведения до geojson совместимого состояния, превращения в пространственный объект и сохранения для дальнейшей работы.
 
 
@@ -15,7 +21,7 @@ https://op.mos.ru/EHDWSREST/catalog/export/get?id=254700
 
 2. R https://cran.r-project.org + RStudio https://www.rstudio.com/products/rstudio/download/#download (либо все то же самое в целом можно сделать на Python, если знаете его, но примеры будут в R)
 
-Скачать архив кода и файлов с гит-хаба  https://github.com/e-kotov/2018-03-21_r_data_mos_ru_adr_reg , либо из облака mail.ru https://cloud.mail.ru/public/JMCo/FTfWaRerc
+Скачать архив кода и файлов с гит-хаба  https://github.com/e-kotov/2018-03-21_r_data_mos_ru_adr_reg 
 
 Установить в R пакеты "data.table", "readxl", "sf", "parallel", "rlist", "rgdal". Можно, просто скачав весь проект открыть в Rstudio файл 2018-03-21_r_data_mos_ru_adr_reg.Rproj затем в навигаторе файлов в Rstudio (справа снизу) открыть файл pre_install_packages.Rmd и выполнить первый блок кода (можно просто на нем нажать Play в правом верхнем углу блока).
 
